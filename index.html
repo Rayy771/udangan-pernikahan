@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Pernikahan Adit & Nisa</title>
+  <title>Undangan Pernikahan Kosong & Kosong</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
@@ -11,7 +11,7 @@
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: #fdf6f0;
+      background: rebeccapurple;
       color: #333;
     }
     header {
@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
+      color: rgb(0, 0, 0);
       text-align: center;
     }
     header h1 {
@@ -59,7 +59,7 @@
     }
     .rsvp-form button {
       background-color: #eab676;
-      color: white;
+      color: rgb(2, 2, 2);
       padding: 10px 20px;
       border: none;
       border-radius: 8px;
@@ -74,7 +74,7 @@
   </audio>
 
   <header>
-    <h1>Kosong & Kosong</h1>
+    <h1>Kosong & Kosong </h1>
     <p>20 Juli 2025</p>
   </header>
 
@@ -117,12 +117,12 @@
 
   <script>
     // Countdown
-    const targetDate = new Date("2025-07-23T08:00:00").getTime();
+    const targetDate = new Date("2025-07-20T08:00:00").getTime();
     const timerElement = document.getElementById("timer");
     setInterval(() => {
       const now = new Date().getTime();
       const diff = targetDate - now;
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const days = Math.floor(diff / (1 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
@@ -131,14 +131,16 @@
 
     // Firebase Config (GANTI DENGAN PUNYAMU)
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "SENDER_ID",
-      appId: "APP_ID"
-    };
+  apiKey: "AIzaSyAcc78Zon-F8I0JWSx6H9i_7hEGUHWQdR0",
+  authDomain: "undangan-8d6c3.firebaseapp.com",
+  databaseURL: "https://undangan-8d6c3-default-rtdb.firebaseio.com",
+  projectId: "undangan-8d6c3",
+  storageBucket: "undangan-8d6c3.firebasestorage.app",
+  messagingSenderId: "348475182815",
+  appId: "1:348475182815:web:dd8209a674d7e5b9b2236a",
+  measurementId: "G-GKYR42HXP1"
+};
+
 
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
