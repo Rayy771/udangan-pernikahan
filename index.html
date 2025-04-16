@@ -2,155 +2,156 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aull & Ari - Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Adit & Nisa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fff0f5;
-      color: #3e2723;
+      font-family: 'Open Sans', sans-serif;
+      background: #fdf6f0;
+      color: #333;
     }
-
     header {
-      background: linear-gradient(to bottom, #6a1b9a, #fce4ec);
-      text-align: center;
-      padding: 50px 20px;
+      background: url('https://images.unsplash.com/photo-1527061011665-3652d4d6c5e3') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       color: white;
-    }
-
-    header img {
-      width: 180px;
-      border-radius: 50%;
-      border: 4px solid white;
-    }
-
-    .button {
-      background: #7b1fa2;
-      color: white;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .countdown {
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 40px 0;
-    }
-
-    .section {
-      padding: 40px 20px;
       text-align: center;
     }
-
-    .section h2 {
+    header h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 4em;
+      margin: 0;
     }
-
-    .quote {
-      font-style: italic;
-      color: #5d4037;
+    header p {
+      font-size: 1.5em;
     }
-
-    .card {
-      background: #f3e5f5;
-      padding: 20px;
-      border-radius: 15px;
-      margin: 20px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
+    section {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
     }
-
-    .card img {
-      width: 100%;
-      border-radius: 15px;
-    }
-
-    .footer {
+    .countdown {
+      font-size: 2em;
       text-align: center;
-      padding: 30px;
-      background: #7b1fa2;
+      margin-bottom: 40px;
+    }
+    .map {
+      text-align: center;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+    .rsvp-form input, .rsvp-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .rsvp-form button {
+      background-color: #eab676;
       color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <!-- Background Music -->
+  <audio autoplay loop hidden id="bg-music">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+  </audio>
 
   <header>
-    <img src="foto-pasangan.jpg" alt="Foto Pasangan">
-    <h1>kosong & kosong</h1>
-    <p>Dear, bapak/ibu yang terhormat</p>
-    <button class="button" onclick="document.getElementById('undangan').scrollIntoView({behavior:'smooth'});">💌 Buka Undangan</button>
+    <h1>Kosong & Kosong</h1>
+    <p>20 Juli 2025</p>
   </header>
 
-  <div class="section" id="undangan">
-    <h2>The Wedding Of</h2>
-    <h1 style="font-family:'Great Vibes', cursive; font-size: 3rem;">Aull & Ari</h1>
-    <p>Kami berharap Anda menjadi bagian dari hari istimewa kami.</p>
-    <div class="countdown">
-      <span id="days">0</span> Hari •
-      <span id="hours">0</span> Jam •
-      <span id="minutes">0</span> Menit •
-      <span id="seconds">0</span> Detik
-    </div>
-    <p><strong>Kamis, 17 April 2025</strong></p>
-  </div>
+  <section>
+    <h2>Assalamu'alaikum Wr. Wb.</h2>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami:</p>
+    <h3>Kosong & Kosong</h3>
+    <p>Yang Insya Allah akan diselenggarakan pada:</p>
+    <ul>
+      <li><strong>Akad:</strong> 20 Juli 2025, 08:00 WIB</li>
+      <li><strong>Resepsi:</strong> 20 Juli 2025, 11:00 WIB</li>
+      <li><strong>Tempat:</strong> Gedung Graha Cinta, Jakarta</li>
+    </ul>
+  </section>
 
-  <div class="section">
-    <h2>Our Special Day</h2>
-    <p class="quote">“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri...”
-      <br><br><em>(QS. Ar-Rum: 21)</em></p>
-  </div>
+  <section class="countdown">
+    <h2>Hitung Mundur Acara</h2>
+    <div id="timer"></div>
+  </section>
 
-  <div class="section">
-    <div class="card">
-      <h3>The Bride</h3>
-      <img src="pengantin-wanita.jpg" alt="Pengantin Wanita">
-      <p><strong>Afrina Rahmada Aulia, S.Kep,Ners</strong><br>Putri dari Bapak Drs. Surahim & Ibu Ida Farida</p>
-    </div>
+  <section>
+    <h2>Galeri Kenangan</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Foto 1">
+    <img src="https://via.placeholder.com/300x200" alt="Foto 2">
+  </section>
 
-    <div class="card">
-      <h3>The Groom</h3>
-      <img src="pengantin-pria.jpg" alt="Pengantin Pria">
-      <p><strong>Ari</strong><br>Putra dari (nama orang tua pria)</p>
-    </div>
-  </div>
+  <section class="map">
+    <h2>Lokasi Acara</h2>
+    <iframe src="https://www.google.com/maps/embed?..." allowfullscreen></iframe>
+  </section>
 
-  <div class="footer">
-    Terima kasih telah menjadi bagian dari momen bahagia kami. 💖
-  </div>
+  <section>
+    <h2>Konfirmasi Kehadiran</h2>
+    <form class="rsvp-form" id="rsvpForm">
+      <input type="text" id="nama" placeholder="Nama Anda" required>
+      <textarea id="ucapan" placeholder="Ucapan & Doa" rows="4"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
 
   <script>
-    const countdownDate = new Date("April 17, 2025 08:00:00").getTime();
-
-    const countdownFunction = setInterval(() => {
+    // Countdown
+    const targetDate = new Date("2025-07-23T08:00:00").getTime();
+    const timerElement = document.getElementById("timer");
+    setInterval(() => {
       const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.querySelector(".countdown").innerHTML = "Acara telah berlangsung";
-      }
+      const diff = targetDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      timerElement.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
     }, 1000);
-  </script>
 
+    // Firebase Config (GANTI DENGAN PUNYAMU)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const ucapan = document.getElementById("ucapan").value;
+      const id = Date.now();
+      database.ref('rsvp/' + id).set({ nama, ucapan });
+      alert("Terima kasih atas konfirmasi & doanya!");
+      this.reset();
+    });
+  </script>
 </body>
 </html>
